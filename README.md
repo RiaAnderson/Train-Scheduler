@@ -10,7 +10,7 @@ Use this code to enter in new trains and display the trains in the table above t
 * Knowledge of css
 * Knowledge of vanilla javascript
 * Knowledge of jQuery
-* Knowledge of APIs
+* Knowledge of Firebase
 
  
 ## Installing
