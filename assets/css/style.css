@@ -1,6 +1,21 @@
+* {
+    font-family: 'Montserrat Alternates', sans-serif;
+}
+
+.jumbotron{
+    margin-left: 45px;
+    margin-right: 45px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
 .card {
 margin-left: 45px;
 margin-right: 45px;
 margin-top: 20px;
 margin-bottom: 20px;
+}
+
+body {
+    background-image: url("../images/background.jpg");
 }

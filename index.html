@@ -5,26 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://www.gstatic.com/firebasejs/6.6.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.6.0/firebase-database.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat+Alternates&display=swap" rel="stylesheet">
+
         <title>Train Scheduler</title>
 </head>
 <body>
 
-<div class="card card-default">
+<!-- <div class="card card-default"> -->
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
           <h1 class="display-4">Train Scheduler</h1>
           <p class="lead">Use the form below to see when the next train will arrive.</p>
         </div>
       </div>
-    </div>
+    <!-- </div> -->
 
     <div class="card card-default">
     <div class="card-header">
         Train Schedule
     </div>
       <table class="table">
-        <thead class="thead-dark">
+        <thead class="thead-light">
           <tr>
             <th scope="col">Train Name</th>
             <th scope="col">Destination</th>
@@ -33,7 +37,7 @@
             <th scope="col">Minutes Away</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody id="appendNewTrain">
           <tr>
             <th scope="row">Orient Express</th>
             <td>Milan</td>
@@ -59,28 +63,28 @@
           <div class="card-body">
             <form role="form">
               <div class="form-group row">
-                <label for="name-input">Train Name</label>
+                <label for="trainName-input">Train Name</label>
                 <input class="form-control" id="trainName-input" type="text">
               </div>
               <div class="form-group row">
-                <label for="email-input">Destination</label>
+                <label for="destination-input">Destination</label>
                 <input class="form-control" id="destination-input" type="text">
               </div>
               <div class="form-group row">
-                <label for="name-input">Next Arrival Time</label>
+                <label for="arrival-input">Next Arrival Time</label>
                 <input class="form-control" id="arrival-input" type="text">
               </div>
               <div class="form-group row">
-                <label for="email-input">Frequency</label>
+                <label for="frequency-input">Frequency</label>
                 <input class="form-control" id="frequency-input" type="text">
               </div>
-              <button class="btn btn-default" id="add-train" type="submit">Submit</button>
+              <button class="btn btn-secondary" id="add-train" type="submit">Submit</button>
             </form>
           </div>
         </div>
 
       
-        <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script type="text/javascript" src="assets/js/train.js"></script>
